@@ -28,7 +28,7 @@ pipeline{
 
        }
 
-    stage("Checkout from SCM"){
+    stage("Test application"){
        steps {
                 sh "mvn test"
             }
