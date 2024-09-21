@@ -1,6 +1,4 @@
 pipeline{
-    agent{
-    }
     tools {
         jdk 'Java17'
         maven 'Maven3'
