@@ -13,14 +13,12 @@ pipeline{
             }
 
         }
-    }
     
-    stages("Checkout from SCM"){
+    stage("Checkout from SCM"){
        steps {
                 git branch: 'main', credentialsId: 'github', url: 'https://github.com/rohit1456/complete-prodcution-e2e-pipeline'
             }
 
        }
     }
-
 }
