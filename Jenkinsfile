@@ -20,5 +20,20 @@ pipeline{
             }
 
        }
+
+    stage("Build application"){
+       steps {
+                sh "mvn clean package"
+            }
+
+       }
+
+    stage("Checkout from SCM"){
+       steps {
+                sh "mvn test"
+            }
+
+       }
+
     }
 }
