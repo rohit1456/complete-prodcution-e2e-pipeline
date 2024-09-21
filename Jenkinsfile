@@ -15,6 +15,10 @@ pipeline {
 
         stage("Checkout from SCM") {
             steps {
+                sh """
+                    git config --global http.sslVerify false
+                    git config --global http.postBuffer 524288000
+                """
                 git branch: 'main', credentialsId: 'github', url: 'https://github.com/rohit1456/complete-prodcution-e2e-pipeline'
             }
         }
