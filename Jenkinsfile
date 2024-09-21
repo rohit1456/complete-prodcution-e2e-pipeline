@@ -28,9 +28,18 @@ pipeline{
 
        }
 
-    stage("test application"){
+    stage("Checkout from SCM"){
        steps {
                 sh "mvn test"
+            }
+
+       }
+
+    stage("sonarqube analysis"){
+       steps {
+            script {
+                withSonarQubeEnv(credentialsID: 'Jenkins-sonarqube-token') {
+                    sh "mvn sonar:sonar"
             }
 
        }
